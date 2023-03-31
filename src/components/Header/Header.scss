@@ -29,16 +29,6 @@ a {
   display: flex;
   width: 50%;
   justify-content: center;
-  // align-items: center;
-  // justify-content: space-between;
-  // width: 300px;
-  // height: 38px;
-  // border-radius: 4px;
-  // background-color: $font-primary;
-  // padding: 0px 10px;
-  // color: $Secondary-color;
-  // font-size: 14px;
-  // font-weight: 700;
 
   form {
     display: flex;
@@ -48,6 +38,7 @@ a {
       padding: 0px 8px;
       border: none;
       background-color: lightgray;
+      border-radius: 0px 4px 4px 0px;
       cursor: pointer;
       font-size: 20px;
       height: 38px;
@@ -63,5 +54,48 @@ a {
     font-weight: 700;
     color: $Secondary-color;
     background-color: $font-primary;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0px 20px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .user_image,
+  .user_image img {
+    display: none;
+  }
+  .search-bar {
+    width: 100%;
+    form {
+      width: 100%;
+      button {
+        font-size: 16px;
+        height: 32px;
+      }
+    }
+    input {
+      height: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 16px;
+  }
+  .search-bar {
+    form {
+      button {
+        font-size: 14px;
+        height: 28px;
+      }
+    }
+    input {
+      height: 28px;
+    }
   }
 }

@@ -31,6 +31,9 @@ const MovieDetail = () => {
                         <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading" />
                     </div>
                 ) : (<>
+                    <div className="section-right">
+                        <img src={data.Poster} alt={data.Title} />
+                    </div>
                     <div className="section-left">
                         <div className="movie-title">{data.Title}</div>
                         <div className="movie-rating">
@@ -72,9 +75,7 @@ const MovieDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="section-right">
-                        <img src={data.Poster} alt={data.Title} />
-                    </div>
+
                 </>
                 )}
         </div>

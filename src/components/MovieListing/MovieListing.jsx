@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { getAllMovies, getAllShows } from '../../features/movies/movieSlice'
 import MovieCard from '../MovieCard/MovieCard'
-import Slider from 'react-slick'
-import { settings } from '../../common/settings'
+
 
 import "./MovieListing.scss"
 
 const MovieListing = () => {
+    const [movieList, setMovieList] = useState(true)
+    const [pages, setPages] = useState(1)
+
+    const showMovies = () => {
+        setMovieList(true)
+        console.log("movies")
+    }
+
+    const showShows = () => {
+        setMovieList(false)
+        console.log("shows")
+    }
 
 
     const movies = useSelector(getAllMovies)
@@ -35,13 +46,17 @@ const MovieListing = () => {
         );
     return (
         <div className="movie-wrapper">
-            <div className="movie-list">
-                <h2>Movies</h2>
-                <div className='movie-container'><Slider {...settings} >{renderMovies} </Slider></div>
+            <div className='categories'>
+                <button onClick={() => { showMovies() }}>Movies</button>
+                <button onClick={() => { showShows() }}>Shows</button>
             </div>
             <div className="movie-list">
-                <h2>Shows</h2>
-                <div className='movie-container'><Slider {...settings} > {renderShows}</Slider> </div>
+                <div className='movie-container'> {movieList ? renderMovies : renderShows} </div>
+            </div>
+
+            <div className='pages'>
+                <button onClick={() => { setPages(pages - 1) }}>Prev</button>
+                <button onClick={() => { setPages(pages + 1) }}>Next</button>
             </div>
         </div>
     )

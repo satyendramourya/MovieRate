@@ -1,34 +1,64 @@
 @import '../../common/colors.scss';
 
 .movie-section {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 20px;
   padding: 40px 0px;
   color: $font-primary;
   font-weight: 400;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .movie-rating {
-  padding-left: 3px;
+  padding: 6px;
   margin-top: 20px;
   color: $font-primary;
   display: flex;
   span {
     margin-right: 20px;
   }
+  border-bottom: 1px solid $font-primary;
+  border-radius: 10px;
 }
 
 .movie-title {
   font-size: 40px;
-  color: $font-primary;
+  color: rgb(51, 115, 189);
+  font-weight: 600;
 }
 .movie-plot {
   margin-top: 20px;
   line-height: 1.8rem;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgb(202, 192, 192);
+}
+.movie-info {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    margin-right: 20px;
+  }
 }
 
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: start;
+}
+
+.movie-info > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+}
 .movie-info > div span:first-child {
-  padding: 10px 0px;
+  padding: 7px 0px;
   color: $font-primary;
   font-weight: 600;
   width: 100px;
@@ -36,7 +66,7 @@
 }
 
 .movie-info > div span {
-  color: $font-primary;
+  color: goldenrod;
 }
 
 .fa-star {
@@ -56,4 +86,24 @@
 
 .section-right {
   margin-left: 30px;
+}
+
+@media screen and (min-width: 1440) {
+  .movie-section {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1024) {
+  .movie-section {
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie-section {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
 }

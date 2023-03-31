@@ -1,5 +1,7 @@
 {
   "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'cascadia code', 'fira code', 'victoria code', Consolas, 'Courier New', monospace"
 }
