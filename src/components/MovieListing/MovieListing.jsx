@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { getAllMovies, getAllShows } from '../../features/movies/movieSlice'
+import { getAllMovies, getAllShows } from '../../features/featureSlices/movieSlice'
 import MovieCard from '../MovieCard/MovieCard'
 
 

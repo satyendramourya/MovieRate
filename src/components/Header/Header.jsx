@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import user from "../../images/user.png"
 import { useDispatch } from 'react-redux'
 import "./Header.scss"
-import { fetchAsyncMovies, fetchAsyncShows } from '../../features/movies/movieSlice'
+import { fetchAsyncMovies, fetchAsyncShows } from '../../features/featureSlices/movieSlice'
 
 const Header = () => {
     const [term, setTerm] = useState('')

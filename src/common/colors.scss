@@ -1,4 +1,11 @@
-$primary-color : #0f171e;
+$primary-color: #0f171e;
 $Secondary-color: #1a242f;
 $font-primary: #fff;
 $font-secondary: #000;
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

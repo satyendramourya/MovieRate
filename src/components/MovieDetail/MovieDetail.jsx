@@ -6,7 +6,7 @@ import {
     fetchAsyncMoviesOrShowsDetails,
     getSelectedMovieOrShow,
     removeSelectedMovieOrShow
-} from "../../features/movies/movieSlice"
+} from "../../features/featureSlices/movieSlice"
 
 const MovieDetail = () => {
 
