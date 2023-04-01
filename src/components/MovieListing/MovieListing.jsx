@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { getAllMovies, getAllShows } from '../../features/featureSlices/movieSlice'
+import { getAllMovies } from '../../features/featureSlices/movieSlice'
+import { getAllShows } from '../../features/featureSlices/showsSlice'
 import MovieCard from '../MovieCard/MovieCard'
 
 
@@ -23,7 +24,9 @@ const MovieListing = () => {
 
     const movies = useSelector(getAllMovies)
     const shows = useSelector(getAllShows)
-    let renderMovies, renderShows = "";
+
+    let renderMovies = "";
+    let renderShows = "";
 
     renderMovies =
         movies.Response === "True" ? (
@@ -44,6 +47,7 @@ const MovieListing = () => {
                 <h3>{shows.Error}</h3>
             </div>
         );
+
     return (
         <div className="movie-wrapper">
             <div className='categories'>
@@ -51,6 +55,7 @@ const MovieListing = () => {
                 <button onClick={() => { showShows() }}>Shows</button>
             </div>
             <div className="movie-list">
+                {/* <div className='movie-container'> {movieList ? renderMovies : 'none'} </div> */}
                 <div className='movie-container'> {movieList ? renderMovies : renderShows} </div>
             </div>
 

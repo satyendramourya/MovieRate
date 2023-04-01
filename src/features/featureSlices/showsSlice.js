@@ -3,8 +3,8 @@ import movieApi from '../../common/apis/movieApi';
 import { APIKey } from '../../common/apis/MovieApiKey';
 
 // ---------async thunk ------------------
-export const fetchAsyncShows = createAsyncThunk('movies/fetchAsyncShows', async (term) => {
-  const response = await movieApi.get(`?apiKey=${APIKey}&s=${term}&type=series&page=2`);
+export const fetchAsyncShows = createAsyncThunk('movies/fetchAsyncShows', async (term, pageNo) => {
+  const response = await movieApi.get(`?apiKey=${APIKey}&s=${term}&type=series&page=${pageNo}`);
   return response.data;
 });
 
@@ -16,11 +16,7 @@ const initialState = {
 const showsSlice = createSlice({
   name: 'shows',
   initialState,
-  reducers: {
-    removeSelectedMovieOrShow: (state) => {
-      state.selectMovieOrShow = {};
-    },
-  },
+  reducers: {},
 
   extraReducers: {
     // --------pending-------------
@@ -29,7 +25,7 @@ const showsSlice = createSlice({
     },
     [fetchAsyncShows.fulfilled]: (state, { payload }) => {
       console.log('Fetched Successfully!');
-      return { ...state, movies: payload };
+      return { ...state, shows: payload };
     },
     [fetchAsyncShows.rejected]: () => {
       console.log('Rejected!');
@@ -37,5 +33,5 @@ const showsSlice = createSlice({
   },
 });
 
-export const getAllShows = (state) => state.movies.shows;
+export const getAllShows = (state) => state.shows.shows;
 export default showsSlice.reducer;
