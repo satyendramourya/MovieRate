@@ -9,7 +9,7 @@ import "./MovieListing.scss"
 
 const MovieListing = () => {
     const [movieList, setMovieList] = useState(true)
-    const [pages, setPages] = useState(1)
+    // const [pages, setPages] = useState(1)
 
     const showMovies = () => {
         setMovieList(true)
@@ -59,10 +59,10 @@ const MovieListing = () => {
                 <div className='movie-container'> {movieList ? renderMovies : renderShows} </div>
             </div>
 
-            <div className='pages'>
+            {/* <div className='pages'>
                 <button onClick={() => { setPages(pages - 1) }}>Prev</button>
                 <button onClick={() => { setPages(pages + 1) }}>Next</button>
-            </div>
+            </div> */}
         </div>
     )
 }

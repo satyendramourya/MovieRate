@@ -15,7 +15,7 @@ const Header = () => {
             return alert('Please enter a search term')
         }
         e.preventDefault()
-        dispatch(fetchAsyncMovies(term))
+        dispatch(fetchAsyncMovies(term, 2))
         dispatch(fetchAsyncShows(term))
         setTerm('')
     }
